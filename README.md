@@ -69,6 +69,15 @@ voila daily_network_stats.ipynb
 
 Both commands will launch the notebook in a browser. If in Jupyter Lab, click into the cell and click the "run" button (or command-enter).
 
+To download beacon.log from fly.io to analyze locally, run
+```
+fly ssh sftp shell
+```
+and then in the shell, run
+```
+get /workspace/beacon.log
+```
+
 ### Notes
 
 The link to the getting started guide is broken, I believe it should go to https://docs.daily.co/get-started#main
