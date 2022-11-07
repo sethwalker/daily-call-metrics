@@ -30,7 +30,7 @@ By default it will run at http://localhost:3000
 
 When deploying to Vercel (or similar hosts), set environment variables in the config.
 
-## The collector
+## The beacon collector
 
 The beacon collector is a minimal flask app that writes the JSON payload directly to a log file and returns a 204 No Content (presumably the client is not even listening, given the nature of sendBeacon).
 
@@ -55,6 +55,19 @@ to your .env file in meet-remix and restarting will connect the call app with th
 ## The dashboard
 
 The dashboard is implemented as a [Jupyter](https://jupyter.org/) interactive notebook using the Plotly graphing library. The notebook reads and parses the JSON log file directly into a dataframe for exploratory analysis. Initial graphs show the 4 key metrics as a timeseries over the course of the call as well as a histogram.
+
+To run the dashboard in development, install the beacon collector as above, then run
+
+```
+jupyter-lab daily_network_stats.ipynb
+```
+
+To see the minimal Voila dashboard, run
+```
+voila daily_network_stats.ipynb
+```
+
+Both commands will launch the notebook in a browser. If in Jupyter Lab, click into the cell and click the "run" button (or command-enter).
 
 ### Notes
 
